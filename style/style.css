@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    height: 100vh;
+}
+
+.title {
+    position: absolute;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 60px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 3px rgb(37, 37, 37); /* x-acsis y-acsis blur-effect  */
+    text-transform: uppercase;
+    z-index: 100;  /* Place element at the top of every element */
+    top: 80px;
+    left: 80px;
+}
+
+.search-container {
+    position: absolute;
+    display: flex;
+    width: 353px;
+    height: 45px;
+    background-color: beige;
+    z-index: 100;
+    top: 170px;
+    left: 80px;
+    border-radius: 50px;
+}
+
+.search {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.search-container input {
+    flex-grow: 1; /* max size for 1 and 0 for min size */ 
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: rgb(37, 37, 37);
+}
+
+.search-container input:focus {
+    outline: none;
+}
+
+.search i {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+
+.store-list-container {
+    position: absolute;
+    top: 240px;
+    left: 80px;
+    width: 350px;
+    bottom: 25px;
+    z-index: 100;
+    border-radius: 25px;
+    background-color: floralwhite;
+    display: flex;
+}
+
+
+.store-list {
+    padding:0 10px;
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+.store-container {
+    border-bottom: 2px solid rgb(58, 57, 57);
+}
+
+.store-container-background {
+    margin:10px 0;
+    padding: 8px;
+    display: flex;
+    cursor: pointer;
+    border-radius: 10px;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.store-container-background:hover {
+    background-color: #ccc;
+}
+
+.store-info-container { 
+    flex-grow: 1;
+}   
+
+.store-address span {
+    font-size: 15px;
+    display: block;
+}
+
+.store-phone-number {
+    font-size: 15px;
+}
+
+.store-number-container {
+    display: flex;
+}
+
+.store-number {
+    width: 30px;
+    height: 30px;
+    color: white;
+    border-radius: 50%;
+    background-color: rgb(58, 57, 57);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
