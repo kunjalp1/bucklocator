@@ -41,8 +41,13 @@ body {
     padding-right: 25px;
 }
 
+.cancel {
+    display: inline;
+}
+
 .search-container input {
     flex-grow: 1; /* max size for 1 and 0 for min size */ 
+    padding-left: 10px;
     background-color: transparent;
     border: none;
     font-size: 20px;
@@ -58,8 +63,6 @@ body {
     cursor: pointer;
 }
 
-
-
 .store-list-container {
     position: absolute;
     top: 240px;
@@ -71,7 +74,6 @@ body {
     background-color: floralwhite;
     display: flex;
 }
-
 
 .store-list {
     padding:0 10px;

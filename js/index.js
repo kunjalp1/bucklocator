@@ -141,13 +141,22 @@ function initMap() {
     ]
   });
   infoWindow = new google.maps.InfoWindow();
-  searchStores(); /* this function is called here as it show all stores initially */
+  searchStores();     /* this function is called here as it show all stores initially */
 }
-function searchStores() {         /* this function will call when we click on the search icon */
-    var foundStore =[];
-    var searchData = document.getElementById('zip-code-input').value;  /*It take data from zip-code-input */
 
-    /*Add cancel icon and implement it by putting value = null */
+
+function cancel() {                 /*this function clear's the search data */
+  document.getElementById('zip-code-input').value = null;  /* By putting NULL value*/
+
+  clearLocations();                 /* this remove all previous searched markers and remove over lap issue */
+  displayStores(stores);            /* this will display all stores in the list */
+  showStoreMarkers(stores);         /* this put all the store marker */
+  setOnClickListener();           /* this show's InfoWindow on the marker */
+}
+
+function searchStores() {         /* this function will call when we click on the search icon */
+  var foundStore =[];
+  var searchData = document.getElementById('zip-code-input').value;  /*It take data from zip-code-input */
 
     if(searchData) {
       stores.forEach(function(store, index){
@@ -160,26 +169,26 @@ function searchStores() {         /* this function will call when we click on th
     } else {   /*if SearchData is empty than it assign foundStore to Original Stores list */
       foundStore = stores;
     }
-    clearLocations();
-    displayStores(foundStore);
-    showStoreMarkers(foundStore);
-    setOnClickListener();
+    clearLocations();                 /* this remove all previous searched markers and remove over lap issue */
+    displayStores(foundStore);        /* this will display all stores in the list */
+    showStoreMarkers(foundStore);     /* this put all the store marker */
+    setOnClickListener();             /* this show's InfoWindow on the marker */
 }
 
 function clearLocations() {
     infoWindow.close();
     for (var i = 0; i < markers.length; i++) {    /* Its loops thourgh map and remove all the marker*/
-      markers[i].setMap(null);                  /* by using setMap(null) */
+      markers[i].setMap(null);                    /* by using setMap(null) */
     }
     markers.length = 0;     /* Here we clearing out the elements markers array */
 }
 
 function setOnClickListener() {
     var storeElement = document.querySelectorAll(".store-container");  /* here we use querySelectorAll because */
-    storeElement.forEach(function(elem, index) {                      /* it --- on all store-container */
+    storeElement.forEach(function(elem, index) {                       /* it --- on all store-container */
       elem.addEventListener('click', function(){
         new google.maps.event.trigger(markers[index], 'click');
-      })
+      })  
     })
 }
 
