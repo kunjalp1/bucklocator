@@ -14,7 +14,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 60px;
     color: rgb(255, 255, 255);
-    text-shadow: 0 0 3px rgb(37, 37, 37); /* x-acsis y-acsis blur-effect  */
+    text-shadow: 0 0 3px rgb(37, 37, 37); /* x-axis y-axis blur-effect  */
     text-transform: uppercase;
     z-index: 100;  /* Place element at the top of every element */
     top: 80px;
